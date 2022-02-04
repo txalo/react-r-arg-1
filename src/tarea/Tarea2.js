@@ -81,4 +81,30 @@ export function PasswordInput(props) {
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+
+//Mi solucion:
+/*
+export function ValidationInput(props) {
+    const [match, setMatch] = React.useState(true);
+    
+    console.log(match)
+    return (
+        <input 
+            type={props.isPassword ? "password" : "text"}
+            className={match ? "input" : "input input-match"}
+            onChange={(event) => setMatch(props.validation(event.target.value))}
+        />
+    )
+
+} */
+export function ValidationInput(props) {
+    const [value, setValue] = React.useState('');
+    
+    return(
+        <input 
+            className={"input " + (!props.validation(value) && "input-match")}
+            type={props.isPassword ? "password" : "text"}
+            onChange={event => setValue(event.target.value)}
+        />
+    )
+}

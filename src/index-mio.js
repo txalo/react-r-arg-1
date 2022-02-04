@@ -1,3 +1,4 @@
+const $reactApp = document.getElementById('react-app');
 // import { Welcome } from './components/Welcome.js';
 //imports de Tarea 1
 //import { Tarjeta, BlogPost } from './tarea/Tarea1.js'
@@ -19,17 +20,48 @@ ReactDOM.render(<BlogPost
     document.getElementById('react-app')); */
 
 // :::: TAREA 2
-import { MatchNombre, PasswordInput } from './tarea/Tarea2.js'
-
+/* import { MatchNombre, PasswordInput, ValidationInput } from './tarea/Tarea2.js'
+const validateNoSpaces = (value) => !value.match(" ");
+const validateMinLenght = (value) => value.length >= 8;
+const validateEmail = (value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 ReactDOM.render(
     (
         <>
             <MatchNombre nombre="Gonzalo" />
             <PasswordInput minLenght="6" />
+            <br/><br/>
+            <p>Sin Espacios</p>
+            <ValidationInput validation={validateNoSpaces} />
+            <p>Largo minimo 8</p>
+            <ValidationInput 
+                validation={validateMinLenght}
+                isPassword
+                />
+            <p>Email valido</p>
+            <ValidationInput validation={validateEmail} />
+
+
         </>
-), document.getElementById('react-app'));
+), document.getElementById('react-app'));  */
 
+/* 
+import { UncontrolledCheckbox, CheckboxList } from './tarea/Tarea3.js'
 
+ReactDOM.render(<CheckboxList items={{
+       uno: false,
+       dos: true,
+       tres: true,
+       cuatro: true,
+     }} />, $reactApp); */
+
+import { ControlledCheckbox, CheckboxListWithState } from './tarea/Tarea4.js'
+
+ReactDOM.render(<CheckboxListWithState items={{
+    uno: false,
+    dos: true,
+    tres: false    
+  }} />, $reactApp);
+     
 
 // import { Button } from './components/Button.js';
 

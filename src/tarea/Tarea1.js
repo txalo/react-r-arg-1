@@ -118,8 +118,8 @@ export function BlogPost(props) {
         <Tarjeta {...props.autor} />
       </header>
       {props.parrafos.split('\n')
-        .map( parrafo => (
-          <p className="post-paragraph">{parrafo}</p>  
+        .map( (parrafo, i) => (
+          <p key={i} className="post-paragraph">{parrafo}</p>  
         ))}
     </article>
   );
